@@ -1,8 +1,7 @@
 import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
-import bcrypt from 'bcryptjs';
 import { formatDistanceToNowStrict } from 'date-fns';
 import locale from 'date-fns/locale/en-US';
+import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
@@ -75,28 +74,6 @@ export function generateArray(n: number): number[] {
 	return result;
 }
 
-export async function hashPassword(password: string): Promise<string> {
-	try {
-		const saltRounds = 10; // You can adjust the number of salt rounds as needed
-		const hashedPassword = await bcrypt.hash(password, saltRounds);
-		return hashedPassword;
-	} catch (error) {
-		throw new Error('Error hashing the password');
-	}
-}
-
-export async function checkPassword(
-	password: string,
-	hash: string,
-): Promise<boolean> {
-	try {
-		const isMatch = await bcrypt.compare(password, hash);
-		return isMatch;
-	} catch (error) {
-		throw new Error('Error checking the password');
-	}
-}
-
 export function isUUID(input: string): boolean {
 	// this will be used to check the id we get from the url is UUID before using it to query the db
 	const uuidPattern =
@@ -114,7 +91,14 @@ export function arrRemoveValue<T>(value: T, arr: T[]): T[] {
 	return arr;
 }
 
-
+export function shuffleArray<T>(array: T[]): T[] {
+	const shuffledArray = [...array];
+	for (let i = shuffledArray.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+	}
+	return shuffledArray;
+}
 
 export const posts = [
 	{ id: 1, title: 'Post 1-1' },
