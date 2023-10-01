@@ -1,1 +1,7 @@
-export const NEXT_PUBLIC_API_URL = '/api/40e9a9a6-19c5-4bca-80eb-96e309d5d5dd';
+import { getHeaders } from './lib/utils/serverOnly';
+
+const { host } = getHeaders();
+console.log(host);
+const http = host.includes('localhost') ? 'http://' : 'https://';
+const url = http + host + '/api/573ae13b-576a-48e4-9a04-d8d029024ac6';
+export const NEXT_PUBLIC_API_URL = url;

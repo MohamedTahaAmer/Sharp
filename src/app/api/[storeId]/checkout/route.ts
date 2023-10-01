@@ -27,6 +27,8 @@ export async function POST(
 		return new NextResponse('Product ids are required', { status: 400 });
 	}
 
+	console.log('Expression');
+
 	const products = await db.product.findMany({
 		where: {
 			id: {

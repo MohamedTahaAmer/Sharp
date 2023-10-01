@@ -7,6 +7,7 @@ export async function GET(
 	req: Request,
 	{ params }: { params: { productId: string } },
 ) {
+	console.log('\x1b[31m%s\x1b[0m', 'in');
 	try {
 		if (!params.productId) {
 			return new NextResponse('Product id is required', { status: 400 });

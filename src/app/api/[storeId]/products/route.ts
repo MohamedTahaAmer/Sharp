@@ -82,7 +82,7 @@ export async function POST(
 
 		return NextResponse.json(product);
 	} catch (error) {
-		console.log('[PRODUCTS_POST]', error);
+		// console.log('[PRODUCTS_POST]', error);
 		return new NextResponse('Internal error', { status: 500 });
 	}
 }
@@ -101,6 +101,10 @@ export async function GET(
 		if (!params.storeId) {
 			return new NextResponse('Store id is required', { status: 400 });
 		}
+
+		// console.log(params.storeId);
+		// const p = await db.product.findMany({ where: { storeId: params.storeId } });
+		// console.log(p);
 
 		const products = await db.product.findMany({
 			where: {
@@ -123,7 +127,7 @@ export async function GET(
 
 		return NextResponse.json(products);
 	} catch (error) {
-		console.log('[PRODUCTS_GET]', error);
+		// console.log('[PRODUCTS_GET]', error);
 		return new NextResponse('Internal error', { status: 500 });
 	}
 }

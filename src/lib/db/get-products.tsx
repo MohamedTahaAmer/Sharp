@@ -25,7 +25,6 @@ const getProducts = async (query: Query): Promise<Product[]> => {
 	console.log(url);
 
 	const { data } = await axios.get(url);
-	console.log(data);
 	console.log(data.length);
 
 	return data;
