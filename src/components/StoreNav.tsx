@@ -1,9 +1,9 @@
-import { db } from '@/lib/db';
 import { getAuthSession } from '@/lib/auth';
-import { UserAccountNav } from './UserAccountNav';
-import StoreSwitcher from './StoreSwitcher';
+import { db } from '@/lib/db';
 import { MainNav } from './MainNav';
-import { ThemeToggle } from './ThemeToggle';
+import StoreSwitcher from './StoreSwitcher';
+import { UserAccountNav } from './UserAccountNav';
+import ThemeToggle from './ThemeToggle';
 
 const StoreNav = async () => {
 	const { user } = (await getAuthSession())!;

@@ -1,40 +1,23 @@
 'use client';
-
-import * as React from 'react';
-import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import Image from 'next/image';
 
-import { Button } from '@/components/ui/button';
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-
-export function ThemeToggle() {
-	const { setTheme } = useTheme();
-
+const ThemeToggle = () => {
+	const { theme, setTheme } = useTheme();
+	function toggle() {
+		theme === 'dark' ? setTheme('light') : setTheme('dark');
+	}
 	return (
-		<DropdownMenu>
-			<DropdownMenuTrigger asChild>
-				<Button variant='outline' size='xs'>
-					<Sun className='h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0' />
-					<Moon className='absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100' />
-					<span className='sr-only'>Toggle theme</span>
-				</Button>
-			</DropdownMenuTrigger>
-			<DropdownMenuContent align='end'>
-				<DropdownMenuItem onClick={() => setTheme('light')}>
-					Light
-				</DropdownMenuItem>
-				<DropdownMenuItem onClick={() => setTheme('dark')}>
-					Dark
-				</DropdownMenuItem>
-				<DropdownMenuItem onClick={() => setTheme('system')}>
-					System
-				</DropdownMenuItem>
-			</DropdownMenuContent>
-		</DropdownMenu>
+		<div
+			className='relative flex h-[20px] w-[50px] cursor-pointer items-center justify-between rounded-full bg-foreground px-[3px] duration-300 hover:scale-110'
+			onClick={toggle}
+		>
+			<span className='sr-only'>Toggle theme</span>
+			<Image src='/moon.png' alt='' width={14} height={14} />
+			<div className='absolute right-1 aspect-square w-[15px] rounded-full bg-background dark:left-1'></div>
+			<Image src='/sun.png' alt='' width={14} height={14} />
+		</div>
 	);
-}
+};
+
+export default ThemeToggle;
