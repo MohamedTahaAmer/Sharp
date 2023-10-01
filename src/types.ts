@@ -2,8 +2,8 @@ import type {
 	Product as dbProduct,
 	Category as dbCategory,
 	Billboard as dbBillboard,
-	Size,
-	Color,
+	Size as dbSize,
+	Color as dbColor,
 } from '@prisma/client';
 
 export type Product = dbProduct & {
@@ -17,3 +17,5 @@ export type Category = dbCategory & {
 };
 
 export type Billboard = dbBillboard;
+export type Color = dbColor;
+export type Size = dbSize;

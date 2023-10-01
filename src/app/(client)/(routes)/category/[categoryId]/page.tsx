@@ -2,13 +2,11 @@ import Container from '@/components/ui/container';
 import NoResults from '@/components/ui/no-results';
 import ProductCard from '@/components/ui/product-card';
 
-import getColors from '@/lib/db/get-colors';
-import getProducts from '@/lib/db/get-products';
-import getSizes from '@/lib/db/get-sizes';
-
+import { STORE_ID } from '@/config';
+import { db } from '@/lib/db';
+import { shuffleArray } from '@/lib/utils';
 import Filter from './components/filter';
 import MobileFilters from './components/mobile-filters';
-import { shuffleArray } from '@/lib/utils';
 
 export const revalidate = 0;
 
@@ -23,14 +21,41 @@ interface CategoryPageProps {
 }
 
 const CategoryPage = async ({ params, searchParams }: CategoryPageProps) => {
-	let products = await getProducts({
-		categoryId: params.categoryId,
-		colorId: searchParams.colorId,
-		sizeId: searchParams.sizeId,
+	let products = await db.product.findMany({
+		where: {
+			storeId: STORE_ID,
+			categoryId: params.categoryId,
+			colorId: searchParams.colorId,
+			sizeId: searchParams.sizeId,
+			isArchived: false,
+		},
+		include: {
+			category: {
+				include: {
+					billboard: true, // Include billboards inside categories
+				},
+			},
+			color: true,
+			size: true,
+		},
+		orderBy: {
+			createdAt: 'desc',
+		},
 	});
+
+	if (!products.length) return null;
+
 	products = shuffleArray(products);
-	const sizes = await getSizes();
-	const colors = await getColors();
+	const sizes = await db.size.findMany({
+		where: {
+			storeId: STORE_ID,
+		},
+	});
+	const colors = await db.color.findMany({
+		where: {
+			storeId: STORE_ID,
+		},
+	});
 
 	return (
 		<div className=' '>

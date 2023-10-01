@@ -2,8 +2,8 @@ import Gallery from '@/components/Gallery';
 import Info from '@/components/info';
 import ProductList from '@/components/product-list';
 import Container from '@/components/ui/container';
-import getProduct from '@/lib/db/get-product';
-import getProducts from '@/lib/db/get-products';
+import { STORE_ID } from '@/config';
+import { db } from '@/lib/db';
 
 export const revalidate = 0;
 
@@ -14,9 +14,38 @@ interface ProductPageProps {
 }
 
 const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
-	const product = await getProduct(params.productId);
-	const suggestedProducts = await getProducts({
-		categoryId: product?.category?.id,
+	const product = await db.product.findUnique({
+		where: {
+			id: params.productId,
+		},
+		include: {
+			category: {
+				include: {
+					billboard: true,
+				},
+			},
+			size: true,
+			color: true,
+		},
+	});
+	const suggestedProducts = await db.product.findMany({
+		where: {
+			storeId: STORE_ID,
+			categoryId: product?.category?.id,
+			isArchived: false,
+		},
+		include: {
+			category: {
+				include: {
+					billboard: true,
+				},
+			},
+			color: true,
+			size: true,
+		},
+		orderBy: {
+			createdAt: 'desc',
+		},
 	});
 
 	if (!product) {
