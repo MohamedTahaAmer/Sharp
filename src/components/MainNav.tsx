@@ -66,7 +66,7 @@ export function MainNav({ className, ...props }: HTMLAttributes<HTMLElement>) {
 				{routes.map((route) => (
 					<Link
 						key={route.href}
-						href={route.href}
+						href={`/admin${route.href}`}
 						className={cn(
 							'text-sm font-medium transition-colors hover:text-primary',
 							route.active

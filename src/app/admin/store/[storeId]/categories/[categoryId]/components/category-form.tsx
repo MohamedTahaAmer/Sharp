@@ -79,7 +79,7 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
 				await createCategory({ storeId: params.storeId, ...data });
 			}
 			router.refresh();
-			router.push(`/store/${params.storeId}/categories`);
+			router.push(`/admin/store/${params.storeId}/categories`);
 			toast({ title: toastMessage });
 		} catch (error: any) {
 			toast({ variant: 'destructive', title: error.message });
@@ -93,7 +93,7 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
 			setLoading(true);
 			await deleteCategory({ ...params });
 			router.refresh();
-			router.push(`/store/${params.storeId}/categories`);
+			router.push(`/admin/store/${params.storeId}/categories`);
 			toast({ title: 'Category deleted.' });
 		} catch (error: any) {
 			toast({ variant: 'destructive', title: error.message });

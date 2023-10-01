@@ -10,7 +10,7 @@ export const loginToast = () => {
 		action: (
 			<Link
 				onClick={() => dismiss()}
-				href='/sign-in'
+				href='/admin/sign-in'
 				className={buttonVariants({ variant: 'outline' })}
 			>
 				Login

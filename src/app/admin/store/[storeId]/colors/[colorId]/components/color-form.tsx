@@ -73,7 +73,7 @@ export const ColorForm: React.FC<ColorFormProps> = ({ initialData }) => {
 				await createColor({ storeId: params.storeId, ...data });
 			}
 			router.refresh();
-			router.push(`/store/${params.storeId}/colors`);
+			router.push(`/admin/store/${params.storeId}/colors`);
 			toast({ title: toastMessage });
 		} catch (error: any) {
 			toast({ variant: 'destructive', title: error.messaage });
@@ -87,7 +87,7 @@ export const ColorForm: React.FC<ColorFormProps> = ({ initialData }) => {
 			setLoading(true);
 			await deleteColor({ ...params });
 			router.refresh();
-			router.push(`/store/${params.storeId}/color`);
+			router.push(`/admin/store/${params.storeId}/color`);
 			toast({ title: 'Color deleted.' });
 		} catch (error: any) {
 			toast({ variant: 'destructive', title: error.messaage });

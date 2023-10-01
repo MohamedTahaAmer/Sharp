@@ -77,7 +77,9 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 					</DropdownMenuItem>
 					<DropdownMenuItem
 						onClick={() =>
-							router.push(`/store/${params.storeId}/categories/${data.id}`)
+							router.push(
+								`/admin/store/${params.storeId}/categories/${data.id}`,
+							)
 						}
 					>
 						<Edit className='mr-2 h-4 w-4' /> Update

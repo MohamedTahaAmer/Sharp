@@ -83,7 +83,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
 				});
 			}
 			router.refresh();
-			router.push(`/store/${storeId}/billboards`);
+			router.push(`/admin/store/${storeId}/billboards`);
 			toast({ title: toastMessage });
 		} catch (error: any) {
 			toast({ variant: 'destructive', title: error.message });
@@ -100,7 +100,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
 				storeId,
 			});
 			router.refresh();
-			router.push(`/store/${storeId}/billboards`);
+			router.push(`/admin/store/${storeId}/billboards`);
 			toast({ title: 'Billboard deleted.' });
 		} catch (error: any) {
 			toast({

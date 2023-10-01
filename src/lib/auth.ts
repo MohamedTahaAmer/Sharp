@@ -9,8 +9,9 @@ export const authOptions: NextAuthOptions = {
 	session: {
 		strategy: 'jwt',
 	},
+
 	pages: {
-		signIn: '/sign-in',
+		signIn: '/admin/sign-in',
 	},
 	providers: [
 		GoogleProvider({
@@ -80,7 +81,7 @@ export const authOptions: NextAuthOptions = {
 			return retToken;
 		},
 		redirect() {
-			return '/';
+			return '/admin';
 		},
 	},
 };

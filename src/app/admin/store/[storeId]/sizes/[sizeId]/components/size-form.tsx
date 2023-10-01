@@ -61,7 +61,7 @@ export const SizeForm: React.FC<SizeFormProps> = ({ initialData }) => {
 				await createSize({ storeId: params.storeId, ...data });
 			}
 			router.refresh();
-			router.push(`/store/${params.storeId}/sizes`);
+			router.push(`/admin/store/${params.storeId}/sizes`);
 			toast({ title: toastMessage });
 		} catch (error: any) {
 			toast({ variant: 'destructive', title: error.messaage });
@@ -75,7 +75,7 @@ export const SizeForm: React.FC<SizeFormProps> = ({ initialData }) => {
 			setLoading(true);
 			await deleteSize({ ...params });
 			router.refresh();
-			router.push(`/store/${params.storeId}/sizes`);
+			router.push(`/admin/store/${params.storeId}/sizes`);
 			toast({ title: 'Size deleted.' });
 		} catch (error: any) {
 			toast({ variant: 'destructive', title: error.messaage });

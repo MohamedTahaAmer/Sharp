@@ -100,7 +100,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
 				await createProduct({ storeId: params.storeId, ...data });
 			}
 			router.refresh();
-			router.push(`/store/${params.storeId}/products`);
+			router.push(`/admin/store/${params.storeId}/products`);
 			toast({ title: toastMessage });
 		} catch (error: any) {
 			toast({ variant: 'destructive', title: error.messaage });
@@ -113,7 +113,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
 		try {
 			setLoading(true);
 			await deleteProduct({ ...params });
-			router.push(`/store/${params.storeId}/products`);
+			router.push(`/admin/store/${params.storeId}/products`);
 			toast({ title: 'Product deleted.' });
 		} catch (error: any) {
 			toast({ variant: 'destructive', title: error.messaage });

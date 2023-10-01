@@ -59,7 +59,7 @@ export const SettingsForm: React.FC<Props> = ({ initialData, host }) => {
 			setLoading(true);
 			await deleteStore(initialData.id);
 			router.refresh();
-			router.push('/');
+			router.push('/admin');
 			toast({ title: 'Store deleted.' });
 		} catch (error: any) {
 			toast({ variant: 'destructive', title: error.message });

@@ -18,7 +18,7 @@ const SignUp = () => {
 				Already a Breadditor?{' '}
 				<Link
 					replace
-					href='/sign-in'
+					href='/admin/sign-in'
 					className='text-sm underline underline-offset-4'
 				>
 					Sign in

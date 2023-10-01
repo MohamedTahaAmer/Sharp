@@ -52,7 +52,7 @@ export const StoreModal = () => {
 			toast({});
 			setIsOpen(false);
 			form.reset();
-			router.push(`/store/${store.id}`);
+			router.push(`/admin/store/${store.id}`);
 		} catch (err: any) {
 			if (err.message === authErrors.notSignedIn) {
 				return loginToast();

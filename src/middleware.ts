@@ -21,7 +21,7 @@ function log(req: NextRequest, protectedPath: boolean = false) {
 async function redirectUnAuthed(req: NextRequest) {
 	const token = await getToken({ req });
 	if (!token) {
-		return NextResponse.redirect(new URL('/sign-in', req.nextUrl));
+		return NextResponse.redirect(new URL('/admin/sign-in', req.nextUrl));
 	}
 }
 
@@ -34,7 +34,11 @@ async function redirectAuthed(req: NextRequest) {
 
 export async function middleware(req: NextRequest) {
 	// - the current flow is that, all the pathes are public except what we put in here
-	const pathesToProtect = ['/user/settings', '/store/:foo*', '/'];
+	const pathesToProtect = [
+		'/admin/user/settings',
+		'/admin/store/:foo*',
+		'/admin',
+	];
 	const protectedPath = matchPathes(req, pathesToProtect);
 
 	// 1- log the route status "protected or not"
@@ -44,7 +48,7 @@ export async function middleware(req: NextRequest) {
 	if (protectedPath) return await redirectUnAuthed(req);
 
 	// 3- redirect authed users
-	const puplicOnlyPathes = ['/sign-in', '/sign-up'];
+	const puplicOnlyPathes = ['/admin/sign-in', '/admin/sign-up'];
 	const isPuplicOnly = matchPathes(req, puplicOnlyPathes);
 	if (isPuplicOnly) return await redirectAuthed(req);
 }
