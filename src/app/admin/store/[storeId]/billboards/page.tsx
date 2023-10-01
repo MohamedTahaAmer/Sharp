@@ -7,7 +7,7 @@ import { BillboardClient } from './components/client';
 import { BillboardColumn } from './components/columns';
 
 const BillboardsPage = async ({ params }: { params: { storeId: string } }) => {
-	if (!isUUID(params.storeId)) redirect('/');
+	if (!isUUID(params.storeId)) redirect('/admin');
 
 	const origin = getOrigin();
 

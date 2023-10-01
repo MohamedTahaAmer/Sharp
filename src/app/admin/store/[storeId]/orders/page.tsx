@@ -6,7 +6,7 @@ import { OrderColumn } from './components/columns';
 import { redirect } from 'next/navigation';
 
 const OrdersPage = async ({ params }: { params: { storeId: string } }) => {
-	if (!isUUID(params.storeId)) redirect('/');
+	if (!isUUID(params.storeId)) redirect('/admin');
 
 	const orders = await db.order.findMany({
 		where: {

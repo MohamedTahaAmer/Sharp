@@ -13,7 +13,7 @@ export default async function DashboardLayout({
 	children: ReactNode;
 	params: { storeId: string };
 }) {
-	if (!isUUID(params.storeId)) redirect('/');
+	if (!isUUID(params.storeId)) redirect('/admin');
 	/*
 with these checks we are forcing the user to get to the his store no matter what
  1- if he went to the home, we redirect him to his store
@@ -32,7 +32,7 @@ with these checks we are forcing the user to get to the his store no matter what
 	});
 
 	if (!store) {
-		redirect('/');
+		redirect('/admin');
 	}
 
 	/*

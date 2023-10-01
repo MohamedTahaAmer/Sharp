@@ -7,7 +7,7 @@ import { getOrigin } from '@/lib/utils/serverOnly';
 import { redirect } from 'next/navigation';
 
 const ProductsPage = async ({ params }: { params: { storeId: string } }) => {
-	if (!isUUID(params.storeId)) redirect('/');
+	if (!isUUID(params.storeId)) redirect('/admin');
 
 	const origin = getOrigin();
 

@@ -1,4 +1,3 @@
-
 import { db } from '@/lib/db';
 
 import { formatTimeToNow, isUUID } from '@/lib/utils';
@@ -8,7 +7,7 @@ import { ColorsClient } from './components/client';
 import { ColorColumn } from './components/columns';
 
 const ColorsPage = async ({ params }: { params: { storeId: string } }) => {
-	if (!isUUID(params.storeId)) redirect('/');
+	if (!isUUID(params.storeId)) redirect('/admin');
 
 	const origin = getOrigin();
 	const colors = await db.color.findMany({

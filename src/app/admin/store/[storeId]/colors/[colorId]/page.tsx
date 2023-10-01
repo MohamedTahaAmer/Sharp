@@ -9,11 +9,11 @@ const ColorPage = async ({
 }: {
 	params: { colorId: string; storeId: string };
 }) => {
-	if (!isUUID(params.storeId)) redirect('/');
+	if (!isUUID(params.storeId)) redirect('/admin');
 
 	let color: Color | null = null;
 	if (params.colorId !== 'new') {
-		if (!isUUID(params.colorId)) redirect('/');
+		if (!isUUID(params.colorId)) redirect('/admin');
 
 		color = await db.color.findUnique({
 			where: {

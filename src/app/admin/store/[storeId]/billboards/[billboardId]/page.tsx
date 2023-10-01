@@ -9,11 +9,11 @@ const BillboardPage = async ({
 }: {
 	params: { billboardId: string; storeId: string };
 }) => {
-	if (!isUUID(params.storeId)) redirect('/');
+	if (!isUUID(params.storeId)) redirect('/admin');
 
 	let billboard: Billboard | null = null;
 	if (params.billboardId !== 'new') {
-		if (!isUUID(params.billboardId)) redirect('/');
+		if (!isUUID(params.billboardId)) redirect('/admin');
 
 		billboard = await db.billboard.findUnique({
 			where: {

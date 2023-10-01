@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 import { SettingsForm } from './components/settings-form';
 
 const SettingsPage = async ({ params }: { params: { storeId: string } }) => {
-	if (!isUUID(params.storeId)) redirect('/');
+	if (!isUUID(params.storeId)) redirect('/admin');
 
 	const origin = getOrigin();
 
@@ -19,7 +19,7 @@ const SettingsPage = async ({ params }: { params: { storeId: string } }) => {
 	});
 
 	if (!store) {
-		redirect('/');
+		redirect('/admin');
 	}
 
 	return (

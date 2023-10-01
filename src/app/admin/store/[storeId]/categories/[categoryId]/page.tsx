@@ -9,11 +9,11 @@ const CategoryPage = async ({
 }: {
 	params: { categoryId: string; storeId: string };
 }) => {
-	if (!isUUID(params.storeId)) redirect('/');
+	if (!isUUID(params.storeId)) redirect('/admin');
 
 	let category: Category | null = null;
 	if (params.categoryId !== 'new') {
-		if (!isUUID(params.categoryId)) redirect('/');
+		if (!isUUID(params.categoryId)) redirect('/admin');
 
 		category = await db.category.findUnique({
 			where: {

@@ -14,7 +14,7 @@ const Page = async () => {
 
 	if (store) {
 		// - this redirection on the home page, depends on db call, so we can't or we shouldn't make it from the middleware
-		redirect(`/store/${store.id}`);
+		redirect(`/admin/store/${store.id}`);
 	}
 
 	return <ShowStoreModal />;

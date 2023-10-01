@@ -9,11 +9,11 @@ const SizePage = async ({
 }: {
 	params: { sizeId: string; storeId: string };
 }) => {
-	if (!isUUID(params.storeId)) redirect('/');
+	if (!isUUID(params.storeId)) redirect('/admin');
 
 	let size: Size | null = null;
 	if (params.sizeId !== 'new') {
-		if (!isUUID(params.sizeId)) redirect('/');
+		if (!isUUID(params.sizeId)) redirect('/admin');
 
 		size = await db.size.findUnique({
 			where: {

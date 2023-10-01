@@ -10,11 +10,11 @@ const ProductPage = async ({
 }: {
 	params: { productId: string; storeId: string };
 }) => {
-	if (!isUUID(params.storeId)) redirect('/');
+	if (!isUUID(params.storeId)) redirect('/admin');
 
 	let product: Product | null = null;
 	if (params.productId !== 'new') {
-		if (!isUUID(params.productId)) redirect('/');
+		if (!isUUID(params.productId)) redirect('/admin');
 
 		product = await db.product.findUnique({
 			where: {

@@ -1,4 +1,3 @@
-
 import { db } from '@/lib/db';
 import { formatTimeToNow, isUUID } from '@/lib/utils';
 import { getOrigin } from '@/lib/utils/serverOnly';
@@ -8,7 +7,7 @@ import { CategoryColumn } from './components/columns';
 
 const CategoriesPage = async ({ params }: { params: { storeId: string } }) => {
 	const origin = getOrigin();
-	if (!isUUID(params.storeId)) redirect('/');
+	if (!isUUID(params.storeId)) redirect('/admin');
 	const categories = await db.category.findMany({
 		where: {
 			storeId: params.storeId,

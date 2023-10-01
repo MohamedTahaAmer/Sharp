@@ -1,1 +1,1 @@
-export const NEXT_PUBLIC_API_URL = '/api/7f24209f-b552-4039-94f0-1e3600839ad3';
+export const NEXT_PUBLIC_API_URL = '/api/40e9a9a6-19c5-4bca-80eb-96e309d5d5dd';

@@ -19,7 +19,7 @@ interface Props {
 }
 
 const DashboardPage = async ({ params }: Props) => {
-	if (!isUUID(params.storeId)) redirect('/');
+	if (!isUUID(params.storeId)) redirect('/admin');
 
 	const totalRevenue = await getTotalRevenue(params.storeId);
 	const graphRevenue = await getGraphRevenue(params.storeId);
