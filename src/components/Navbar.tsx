@@ -3,11 +3,15 @@ import Link from 'next/link';
 import MainNav from '@/components/main-nav';
 import Container from '@/components/ui/container';
 import NavbarActions from '@/components/navbar-actions';
-import getCategories from '@/lib/db/get-categories';
 import { ThemeToggle } from './ThemeToggle';
+import { db } from '@/lib/db';
+import { STORE_ID } from '@/config';
 
 const Navbar = async () => {
-	const categories = await getCategories();
+	const categories = await db.category.findMany({
+		where: { storeId: STORE_ID },
+		include: { billboard: true },
+	});
 
 	return (
 		<div className='border-b'>
