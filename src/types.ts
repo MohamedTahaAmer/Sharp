@@ -1,34 +1,19 @@
-export interface Product {
-	id: string;
+import type {
+	Product as dbProduct,
+	Category as dbCategory,
+	Billboard as dbBillboard,
+	Size,
+	Color,
+} from '@prisma/client';
+
+export type Product = dbProduct & {
 	category: Category;
-	name: string;
-	price: number;
-	isFeatured: boolean;
 	size: Size;
 	color: Color;
-	imageUrls: string[];
-}
+};
 
-export interface Billboard {
-	id: string;
-	label: string;
-	imageUrl: string;
-}
-
-export interface Category {
-	id: string;
-	name: string;
+export type Category = dbCategory & {
 	billboard: Billboard;
-}
+};
 
-export interface Size {
-	id: string;
-	name: string;
-	value: string;
-}
-
-export interface Color {
-	id: string;
-	name: string;
-	value: string;
-}
+export type Billboard = dbBillboard;

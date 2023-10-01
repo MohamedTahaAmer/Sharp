@@ -1,15 +1,37 @@
 import ProductList from '@/components/product-list';
 import Billboard from '@/components/ui/billboard';
 import Container from '@/components/ui/container';
-import getBillboard from '@/lib/db/get-billboard';
-import getProducts from '@/lib/db/get-products';
+import { BILLBOARD_ID, STORE_ID } from '@/config';
+import { db } from '@/lib/db';
 import { shuffleArray } from '@/lib/utils';
 
 export const revalidate = 0;
 
 const HomePage = async () => {
-	const products = await getProducts({ isFeatured: true });
-	const billboard = await getBillboard('4e67da8a-6a5f-4c8c-a76e-5f3eade7ba36');
+	const products = await await db.product.findMany({
+		where: {
+			storeId: STORE_ID,
+			isFeatured: true,
+			isArchived: false,
+		},
+		include: {
+			category: {
+				include: {
+					billboard: true,
+				},
+			},
+			color: true,
+			size: true,
+		},
+		orderBy: {
+			createdAt: 'desc',
+		},
+	});
+	const billboard = await db.billboard.findUnique({
+		where: { storeId: STORE_ID, id: BILLBOARD_ID },
+	});
+
+	if (!billboard) return null;
 
 	return (
 		<Container>
