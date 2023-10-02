@@ -15,6 +15,7 @@ let getUserImg = (image: string | null, name: string | null) => {
 				<div className='relative aspect-square h-full w-full'>
 					<Image
 						fill
+						sizes='500px'
 						src={image}
 						alt='profile picture'
 						referrerPolicy='no-referrer'

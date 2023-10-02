@@ -56,7 +56,7 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
 				*/
 					src={data.imageUrls[0]}
 					sizes='500px'
-					alt=''
+					alt='product Image'
 					fill
 					className='rounded-xl object-contain object-center'
 				/>
