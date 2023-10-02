@@ -8,14 +8,14 @@ const buttonVariants = cva(
 	{
 		variants: {
 			variant: {
-				default: 'bg-zinc-900 text-zinc-100 hover:bg-zinc-800',
+				default: 'bg-foreground text-background-100 hover:bg-foreground',
 				destructive:
 					'bg-destructive text-destructive-foreground hover:bg-destructive/90',
 				outline:
-					'bg-zinc-100 text-zinc-900 hover:bg-zinc-200 outline outline-1 outline-zinc-300',
-				subtle: 'hover:bg-zinc-200 bg-zinc-100 text-zinc-900',
+					'bg-background-100 text-foreground hover:bg-background outline outline-1 outline-background',
+				subtle: 'hover:bg-background bg-background-100 text-foreground',
 				ghost:
-					'bg-transparent hover:bg-zinc-100 text-zinc-800 data-[state=open]:bg-transparent data-[state=open]:bg-transparent',
+					'bg-transparent hover:bg-background-100 text-foreground data-[state=open]:bg-transparent data-[state=open]:bg-transparent',
 				transparent:
 					'hover:bg-transparent focus:ring-transparent focus:ring-offset-0',
 				link: 'bg-transparent dark:bg-transparent underline-offset-4 hover:underline text-slate-900 dark:text-slate-100 hover:bg-transparent dark:hover:bg-transparent',

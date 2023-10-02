@@ -64,12 +64,12 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
 					<div className='flex justify-center gap-x-6'>
 						<IconButton
 							onClick={onPreview}
-							className='text-foreground hover:text-background'
+							className='text-foreground hover:bg-foreground hover:text-background'
 							icon={<Expand size={20} />}
 						/>
 						<IconButton
 							onClick={onAddToCart}
-							className='text-foreground hover:text-background'
+							className='text-foreground hover:bg-foreground hover:text-background'
 							icon={<ShoppingCart size={20} />}
 						/>
 					</div>
