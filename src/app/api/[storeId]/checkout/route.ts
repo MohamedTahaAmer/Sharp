@@ -21,13 +21,10 @@ export async function POST(
 	{ params }: { params: { storeId: string } },
 ) {
 	const { productIds } = await req.json();
-	console.log('\x1b[33m%s\x1b[0m', productIds);
 
 	if (!productIds || productIds.length === 0) {
 		return new NextResponse('Product ids are required', { status: 400 });
 	}
-
-	console.log('Expression');
 
 	const products = await db.product.findMany({
 		where: {
@@ -75,8 +72,8 @@ export async function POST(
 		phone_number_collection: {
 			enabled: true,
 		},
-		success_url: `${process.env.FRONTEND_STORE_URL}/cart?success=1`,
-		cancel_url: `${process.env.FRONTEND_STORE_URL}/cart?canceled=1`,
+		success_url: `/cart?success=1`,
+		cancel_url: `/cart?canceled=1`,
 		metadata: {
 			orderId: order.id,
 		},
