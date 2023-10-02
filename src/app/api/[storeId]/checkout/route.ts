@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 
 import { stripe } from '@/lib/stripe';
 import { db } from '@/lib/db';
+import { getOrigin } from '@/lib/utils/serverOnly';
 
 const corsHeaders = {
 	'Access-Control-Allow-Origin': '*',
@@ -65,6 +66,8 @@ export async function POST(
 		},
 	});
 
+	const origin = getOrigin();
+
 	const session = await stripe.checkout.sessions.create({
 		line_items,
 		mode: 'payment',
@@ -72,8 +75,8 @@ export async function POST(
 		phone_number_collection: {
 			enabled: true,
 		},
-		success_url: `/cart?success=1`,
-		cancel_url: `/cart?canceled=1`,
+		success_url: `${origin}/cart?success=1`,
+		cancel_url: `${origin}/cart?canceled=1`,
 		metadata: {
 			orderId: order.id,
 		},

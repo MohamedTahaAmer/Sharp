@@ -6,13 +6,10 @@ import { stripe } from '@/lib/stripe';
 import { db } from '@/lib/db';
 
 export async function GET() {
-	console.log('Expression');
 	return new NextResponse(`Webhook Error: `);
 }
 export async function POST(req: Request) {
-	console.log('\x1b[31m%s\x1b[0m', '11111111111111111111111111111');
 	const body = await req.text();
-	console.log('-----------------------------------', body);
 	const signature = headers().get('Stripe-Signature') as string;
 
 	let event: Stripe.Event;
@@ -42,6 +39,7 @@ export async function POST(req: Request) {
 	const addressString = addressComponents.filter((c) => c !== null).join(', ');
 
 	if (event.type === 'checkout.session.completed') {
+		// eslint-disable-next-line
 		const order = await db.order.update({
 			where: {
 				id: session?.metadata?.orderId,
@@ -56,18 +54,18 @@ export async function POST(req: Request) {
 			},
 		});
 
-		const productIds = order.orderItems.map((orderItem) => orderItem.productId);
-
-		await db.product.updateMany({
-			where: {
-				id: {
-					in: productIds,
-				},
-			},
-			data: {
-				isArchived: true,
-			},
-		});
+		// - archive the all the purshased products
+		// const productIds = order.orderItems.map((orderItem) => orderItem.productId);
+		// await db.product.updateMany({
+		// 	where: {
+		// 		id: {
+		// 			in: productIds,
+		// 		},
+		// 	},
+		// 	data: {
+		// 		isArchived: true,
+		// 	},
+		// });
 	}
 
 	return new NextResponse(null, { status: 200 });
