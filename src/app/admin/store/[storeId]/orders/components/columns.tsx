@@ -30,21 +30,28 @@ export const columns: ColumnDef<OrderColumn>[] = [
 	},
 	{
 		accessorKey: 'totalPrice',
+		sortingFn: (data1, data2) => {
+			const d1 = parseFloat(
+				data1.original.totalPrice.slice(1).replaceAll(',', ''),
+			);
+			const d2 = parseFloat(
+				data2.original.totalPrice.slice(1).replaceAll(',', ''),
+			);
+			const sort = d2 - d1;
+			return sort;
+		},
 
 		header: ({ column }) => {
 			const handleButtonClick = () => {
 				if (buttonClicks === 0) {
-					// Initial state, no sorting applied
 					column.toggleSorting(true);
 					++buttonClicks;
 				} else if (buttonClicks === 1) {
-					// Sorting applied once, toggle sorting to reverse order
 					column.toggleSorting(false);
 					++buttonClicks;
 				} else if (buttonClicks === 2) {
-					// Sorting applied twice, clear sorting
 					column.clearSorting();
-					buttonClicks = 0; // Reset button clicks to allow going back to the initial state
+					buttonClicks = 0;
 				}
 			};
 			return (
