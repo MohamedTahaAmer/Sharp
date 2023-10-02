@@ -1,3 +1,4 @@
+import ClientFooter from '@/components/ClientFooter';
 import Navbar from '@/components/Navbar';
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
@@ -13,6 +14,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 		<>
 			<Navbar />
 			<div>{children}</div>
+			<ClientFooter />
 		</>
 	);
 }

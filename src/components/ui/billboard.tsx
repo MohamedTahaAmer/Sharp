@@ -10,13 +10,7 @@ const Billboard: React.FC<BillboardProps> = ({ data }) => {
 			<div
 				style={{ backgroundImage: `url(${data?.imageUrl})` }}
 				className='relative aspect-square overflow-hidden rounded-xl bg-slate-100 bg-cover md:aspect-[2.4/1]'
-			>
-				<div className='flex h-full w-full flex-col items-center justify-center gap-y-8 text-center'>
-					<div className='max-w-xs text-3xl font-bold sm:max-w-xl sm:text-5xl lg:text-6xl'>
-						{data?.label}
-					</div>
-				</div>
-			</div>
+			></div>
 		</div>
 	);
 };

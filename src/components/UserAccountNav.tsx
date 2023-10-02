@@ -26,7 +26,7 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
 					className='h-8 w-8'
 				/>
 			</DropdownMenuTrigger>
-			<DropdownMenuContent className='bg-white' align='end'>
+			<DropdownMenuContent className='bg-background' align='end'>
 				<div className='flex items-center justify-start gap-2 p-2'>
 					<div className='flex flex-col space-y-1 leading-none'>
 						{user.name && <p className='font-medium'>{user.name}</p>}
@@ -43,11 +43,11 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
 				</DropdownMenuItem>
 
 				<DropdownMenuItem asChild>
-					<Link href='/r/create'>Create Community</Link>
+					<Link href='/r/create'>Create a Room</Link>
 				</DropdownMenuItem>
 
 				<DropdownMenuItem asChild>
-					<Link href='/user/settings'>Settings</Link>
+					<Link href='/settings'>Settings</Link>
 				</DropdownMenuItem>
 				<DropdownMenuSeparator />
 				<DropdownMenuItem
@@ -55,7 +55,7 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
 					onSelect={(event) => {
 						event.preventDefault();
 						signOut({
-							callbackUrl: `${window.location.origin}/admin/sign-in`,
+							callbackUrl: `${window.location.origin}/sign-in`,
 						});
 					}}
 				>

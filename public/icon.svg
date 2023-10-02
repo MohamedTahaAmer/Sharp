@@ -8,11 +8,11 @@
     </filter>
   </defs>
 
-  <!-- Transparent background with shadow effect -->
-  <rect width="100%" height="100%" rx="50" ry="50" fill="transparent" filter="url(#shadow)" />
+  <!-- White rounded background with shadow effect -->
+  <rect width="100%" height="100%" rx="50" ry="50" fill="white" filter="url(#shadow)" />
 
   <!-- Dark, bold letter "S" centered -->
-  <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="60" fill="dark" text-anchor="middle" dominant-baseline="middle" font-weight="bold">
+  <text x="50%" y="61%" font-family="Arial, sans-serif" font-size="120" fill="dark" text-anchor="middle" dominant-baseline="middle" font-weight="bold">
     S
   </text>
 </svg>
