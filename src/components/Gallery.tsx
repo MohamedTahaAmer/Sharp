@@ -15,7 +15,7 @@ const Gallery: React.FC<GalleryProps> = ({ product }) => {
 			<Tab.Panels className='aspect-square w-full'>
 				{product.imageUrls.map((image, index) => (
 					<Tab.Panel key={image}>
-						<div className='relative aspect-square h-full w-full overflow-hidden bg-slate-200 sm:rounded-lg'>
+						<div className='relative aspect-square h-full w-full overflow-hidden rounded-lg bg-slate-200'>
 							<Image
 								priority
 								fill

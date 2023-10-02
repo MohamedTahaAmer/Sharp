@@ -22,6 +22,7 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
 			<div className='relative h-24 w-24 overflow-hidden rounded-md bg-slate-200 sm:h-48 sm:w-48'>
 				<Image
 					fill
+					priority
 					sizes='500px'
 					src={data.imageUrls[0]}
 					alt=''
