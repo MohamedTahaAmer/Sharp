@@ -17,20 +17,16 @@ const NavbarActions = () => {
 	const router = useRouter();
 	const cart = useCart();
 
-	if (!isMounted) {
-		return null;
-	}
-
 	return (
 		<div className='ml-auto flex items-center gap-x-4'>
 			<div className='p-1'></div>
 			<Button
 				onClick={() => router.push('/cart')}
-				className='flex h-fit items-center rounded-full bg-foreground px-4 py-2 hover:bg-foreground'
+				className='flex h-fit items-center rounded-full bg-foreground px-4 py-2 text-background hover:border hover:border-foreground hover:bg-background hover:text-foreground'
 			>
-				<ShoppingBag className='aspect-square w-4 text-background' />
-				<span className='ml-2 text-sm font-medium text-background'>
-					{cart.items.length}
+				<ShoppingBag className='aspect-square w-4' />
+				<span className='ml-2 text-sm font-medium'>
+					{!isMounted ? 0 : cart.items.length}
 				</span>
 			</Button>
 		</div>

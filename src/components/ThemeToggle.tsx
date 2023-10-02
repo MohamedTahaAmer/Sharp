@@ -9,7 +9,7 @@ const ThemeToggle = () => {
 	}
 	return (
 		<div
-			className='relative flex h-[20px] w-[50px] cursor-pointer items-center justify-between rounded-full bg-foreground px-[3px] duration-300 hover:scale-110'
+			className='relative flex h-[20px] w-[40px] shrink-0 cursor-pointer items-center justify-between rounded-full bg-foreground px-[3px] duration-300 hover:scale-110'
 			onClick={toggle}
 		>
 			<span className='sr-only'>Toggle theme</span>
