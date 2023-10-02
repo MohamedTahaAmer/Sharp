@@ -19,7 +19,7 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
 
 	return (
 		<li className='flex border-b py-6'>
-			<div className='relative h-24 w-24 overflow-hidden rounded-md bg-slate-200 sm:h-48 sm:w-48'>
+			<div className='relative h-24 w-24 overflow-hidden rounded-md bg-background sm:h-48 sm:w-48'>
 				<Image
 					fill
 					priority

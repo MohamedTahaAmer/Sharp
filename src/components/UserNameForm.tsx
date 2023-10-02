@@ -102,7 +102,7 @@ export function UserNameForm({ user, className, ...props }: UserNameFormProps) {
 							Name
 						</Label>
 						<Input
-							className='relative z-10 w-[400px] rounded-none border-0 border-b-2 border-slate-400 bg-background pl-6  shadow-md focus-visible:ring-transparent group-data-[state=error]:border-red-500'
+							className='relative z-10 w-[400px] rounded-none border-0 border-b-2 border-background bg-background pl-6  shadow-md focus-visible:ring-transparent group-data-[state=error]:border-red-500'
 							id='name'
 							size={32}
 							{...register('name')}

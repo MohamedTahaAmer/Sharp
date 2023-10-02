@@ -46,27 +46,27 @@ export default function App() {
 
 	return (
 		<>
-			<div className='m-10 border bg-slate-200 p-4 text-lime-800'>
+			<div className='m-10 border bg-background p-4 text-lime-800'>
 				{globalCount}
 			</div>
 			<button
 				onClick={() => setGlobalCount((prev) => prev + 1)}
-				className='m-10 border bg-slate-200 p-4'
+				className='m-10 border bg-background p-4'
 			>
 				Increment
 			</button>
-			<button onClick={handleClick} className='m-10 border bg-slate-200 p-4'>
+			<button onClick={handleClick} className='m-10 border bg-background p-4'>
 				+3
 			</button>
 			<button
 				onClick={() => setGlobalCount((prev) => prev - 1)}
-				className='m-10 border bg-slate-200 p-4'
+				className='m-10 border bg-background p-4'
 			>
 				Decrement
 			</button>
 			<button
 				onClick={() => setGlobalCount(0)}
-				className='m-10 border bg-slate-200 p-4'
+				className='m-10 border bg-background p-4'
 			>
 				Reset
 			</button>

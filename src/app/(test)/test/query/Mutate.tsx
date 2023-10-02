@@ -38,7 +38,7 @@ const Mutate = () => {
 			{post}
 			{generateArray(posts.length).map((el) => (
 				<button
-					className='m-1 border bg-slate-200 p-4'
+					className='m-1 border bg-background p-4'
 					key={el}
 					onClick={() => setPostId(el)}
 				>
@@ -58,7 +58,7 @@ const Mutate = () => {
 			))}
 
 			<button
-				className='mx-5 border bg-slate-200 p-4'
+				className='mx-5 border bg-background p-4'
 				onClick={() => addNewPost.mutate(`Post ${posts.length + 1}`)}
 			>
 				addNew

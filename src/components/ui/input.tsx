@@ -10,7 +10,7 @@ const inputVariants = cva(
 			variant: {
 				default: '',
 				underLine:
-					'relative z-20 h-12 rounded-none border-0 border-b-2 border-slate-400 bg-background shadow-sm focus-visible:ring-transparent   group-data-[state=error]:border-red-500',
+					'relative z-20 h-12 rounded-none border-0 border-b-2 border-background bg-muted shadow-sm focus-visible:ring-transparent   group-data-[state=error]:border-red-500',
 			},
 		},
 		defaultVariants: {

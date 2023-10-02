@@ -145,7 +145,7 @@ export function DataTable<TData, TValue>({
 							))
 						) : (
 							<TableRow className='grid-auto'>
-								<TableCell className='flex h-full items-center justify-center bg-slate-300 p-0 font-medium '>
+								<TableCell className='flex h-full items-center justify-center bg-background p-0 font-medium '>
 									<div>No results.</div>
 								</TableCell>
 							</TableRow>

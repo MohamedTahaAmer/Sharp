@@ -114,7 +114,7 @@ export const SettingsForm: React.FC<Props> = ({ initialData }) => {
 							)}
 						/>
 					</div>
-					<Button disabled={loading} className='ml-auto' type='submit'>
+					<Button disabled={loading} className='ml-auto'>
 						Save changes
 					</Button>
 				</form>

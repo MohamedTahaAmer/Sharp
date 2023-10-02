@@ -32,7 +32,7 @@ const PreviewGallery: React.FC<GalleryProps> = ({ product }) => {
 					<Tab.Panel key={image}>
 						<div
 							onClick={handleClick}
-							className='relative aspect-square h-full w-full overflow-hidden  bg-slate-200 sm:rounded-lg'
+							className='relative aspect-square h-full w-full overflow-hidden  bg-background sm:rounded-lg'
 						>
 							<Image
 								priority

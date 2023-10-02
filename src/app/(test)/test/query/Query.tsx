@@ -30,7 +30,7 @@ const Query = () => {
 			{post}
 			{generateArray(4).map((el) => (
 				<button
-					className='m-1 border bg-slate-200 p-4'
+					className='m-1 border bg-background p-4'
 					key={el}
 					onClick={() => setPostId(el)}
 				>

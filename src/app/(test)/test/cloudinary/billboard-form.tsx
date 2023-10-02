@@ -176,7 +176,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
 								>
 									<FormControl>
 										<Input
-											className='relative z-20 h-12 rounded-none border-0 border-b-2 border-slate-400 bg-background shadow-sm focus-visible:ring-transparent   group-data-[state=error]:border-red-500'
+											className='relative z-20 h-12 rounded-none border-0 border-b-2 border-background bg-background shadow-sm focus-visible:ring-transparent   group-data-[state=error]:border-red-500'
 											disabled={loading}
 											placeholder='Billboard label*'
 											{...field}

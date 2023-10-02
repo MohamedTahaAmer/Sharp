@@ -8,7 +8,7 @@ const GalleryTab = ({ image }: { image: string }) => {
 		<Tab className='relative flex aspect-square cursor-pointer items-center justify-center rounded-md bg-background'>
 			{({ selected }) => (
 				<div>
-					<span className='absolute inset-0 aspect-square h-full w-full overflow-hidden rounded-md bg-slate-200'>
+					<span className='absolute inset-0 aspect-square h-full w-full overflow-hidden rounded-md bg-background'>
 						<NextImage
 							fill
 							sizes='500px'
