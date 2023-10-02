@@ -14,6 +14,7 @@ const Billboard: React.FC<BillboardProps> = ({ data }) => {
 				sizes='500px'
 				width={500}
 				height={500}
+				priority
 				alt='billboard Image'
 				className='w-auto'
 			/>

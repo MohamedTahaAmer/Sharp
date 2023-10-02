@@ -58,6 +58,7 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
 					sizes='500px'
 					alt='product Image'
 					fill
+					priority
 					className='rounded-xl object-contain object-center'
 				/>
 				<div className='absolute bottom-5 w-full px-6 opacity-0 transition group-hover:opacity-100'>
