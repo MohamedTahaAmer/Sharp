@@ -27,10 +27,9 @@ import { storeValidator, storeValidatorType } from '@/lib/validators/store';
 
 interface Props {
 	initialData: Store;
-	host: string;
 }
 
-export const SettingsForm: React.FC<Props> = ({ initialData, host }) => {
+export const SettingsForm: React.FC<Props> = ({ initialData }) => {
 	const router = useRouter();
 
 	const [open, setOpen] = useState(false);
@@ -120,12 +119,6 @@ export const SettingsForm: React.FC<Props> = ({ initialData, host }) => {
 					</Button>
 				</form>
 			</Form>
-			<Separator />
-			<ApiAlert
-				title='NEXT_PUBLIC_API_URL'
-				variant='public'
-				description={`${host}/api/${initialData.id}`}
-			/>
 		</>
 	);
 };

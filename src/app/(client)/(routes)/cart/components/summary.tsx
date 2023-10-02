@@ -5,10 +5,10 @@ import { useEffect } from 'react';
 
 import { Button } from '@/components/ui/button';
 import Currency from '@/components/ui/currency';
-import { NEXT_PUBLIC_API_URL } from '@/config';
 import useCart from '@/hooks/use-cart';
 import { toast } from 'react-hot-toast';
 import axios from 'axios';
+import { STORE_ID } from '@/config';
 
 const Summary = () => {
 	const searchParams = useSearchParams();
@@ -32,7 +32,7 @@ const Summary = () => {
 
 	const onCheckout = async () => {
 		try {
-			const response = await axios.post(`${NEXT_PUBLIC_API_URL}/checkout`, {
+			const response = await axios.post(`/api/${STORE_ID}/checkout`, {
 				productIds: items.map((item) => item.id),
 			});
 
