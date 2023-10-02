@@ -134,7 +134,7 @@ export function DataTable<TData, TValue>({
 									data-state={row.getIsSelected() && 'selected'}
 								>
 									{row.getVisibleCells().map((cell) => (
-										<TableCell className='p-0 px-4' key={cell.id}>
+										<TableCell className='truncate p-0 px-4' key={cell.id}>
 											{flexRender(
 												cell.column.columnDef.cell,
 												cell.getContext(),

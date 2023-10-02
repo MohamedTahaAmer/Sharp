@@ -9,17 +9,12 @@ import { Heading } from '@/components/ui/heading';
 import { Separator } from '@/components/ui/separator';
 
 import { columns, CategoryColumn } from './columns';
-import { ApiList } from '@/components/ui/api-list';
 
 interface CategoriesClientProps {
 	data: CategoryColumn[];
-	host: string;
 }
 
-export const CategoriesClient: React.FC<CategoriesClientProps> = ({
-	data,
-	host,
-}) => {
+export const CategoriesClient: React.FC<CategoriesClientProps> = ({ data }) => {
 	const params = useParams();
 	const router = useRouter();
 
@@ -40,9 +35,6 @@ export const CategoriesClient: React.FC<CategoriesClientProps> = ({
 			</div>
 			<Separator />
 			<DataTable searchKey='name' columns={columns} data={data} />
-			<Heading title='API' description='API Calls for Categories' />
-			<Separator />
-			<ApiList name='categories' host={host} id='categoryId' />
 		</>
 	);
 };

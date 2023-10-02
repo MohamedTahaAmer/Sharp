@@ -1,12 +1,10 @@
 import { db } from '@/lib/db';
 import { formatTimeToNow, isUUID } from '@/lib/utils';
-import { getOrigin } from '@/lib/utils/serverOnly';
 import { redirect } from 'next/navigation';
 import { CategoriesClient } from './components/client';
 import { CategoryColumn } from './components/columns';
 
 const CategoriesPage = async ({ params }: { params: { storeId: string } }) => {
-	const origin = getOrigin();
 	if (!isUUID(params.storeId)) redirect('/admin');
 	const categories = await db.category.findMany({
 		where: {
@@ -30,7 +28,7 @@ const CategoriesPage = async ({ params }: { params: { storeId: string } }) => {
 	return (
 		<div className='flex-col'>
 			<div className='flex-1 space-y-4 p-8 pt-6'>
-				<CategoriesClient host={origin} data={formattedCategories} />
+				<CategoriesClient  data={formattedCategories} />
 			</div>
 		</div>
 	);

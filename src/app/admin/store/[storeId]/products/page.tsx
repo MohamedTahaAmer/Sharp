@@ -3,13 +3,11 @@ import { formatTimeToNow, formatter, isUUID } from '@/lib/utils';
 
 import { ProductsClient } from './components/client';
 import { ProductColumn } from './components/columns';
-import { getOrigin } from '@/lib/utils/serverOnly';
+
 import { redirect } from 'next/navigation';
 
 const ProductsPage = async ({ params }: { params: { storeId: string } }) => {
 	if (!isUUID(params.storeId)) redirect('/admin');
-
-	const origin = getOrigin();
 
 	const products = await db.product.findMany({
 		where: {
@@ -40,7 +38,7 @@ const ProductsPage = async ({ params }: { params: { storeId: string } }) => {
 	return (
 		<div className='flex-col'>
 			<div className='flex-1 space-y-4 p-8 pt-6'>
-				<ProductsClient host={origin} data={formattedProducts} />
+				<ProductsClient data={formattedProducts} />
 			</div>
 		</div>
 	);

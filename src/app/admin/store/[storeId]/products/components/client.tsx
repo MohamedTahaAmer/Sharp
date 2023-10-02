@@ -7,18 +7,15 @@ import { Button } from '@/components/ui/button';
 import { DataTable } from '@/components/ui/data-table';
 import { Heading } from '@/components/ui/heading';
 import { Separator } from '@/components/ui/separator';
-import { ApiList } from '@/components/ui/api-list';
 
 import { ProductColumn, columns } from './columns';
 
 interface ProductsClientProps {
 	data: ProductColumn[];
-	host: string;
 }
 
 export const ProductsClient: React.FC<ProductsClientProps> = ({
 	data,
-	host,
 }) => {
 	const params = useParams();
 	const router = useRouter();
@@ -40,9 +37,6 @@ export const ProductsClient: React.FC<ProductsClientProps> = ({
 			</div>
 			<Separator />
 			<DataTable searchKey='name' columns={columns} data={data} />
-			<Heading title='API' description='API Calls for Products' />
-			<Separator />
-			<ApiList name='products' host={host} id='productId' />
 		</>
 	);
 };

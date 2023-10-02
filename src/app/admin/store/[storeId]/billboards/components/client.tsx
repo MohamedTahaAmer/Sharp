@@ -7,19 +7,14 @@ import { Button } from '@/components/ui/button';
 import { DataTable } from '@/components/ui/data-table';
 import { Heading } from '@/components/ui/heading';
 import { Separator } from '@/components/ui/separator';
-import { ApiList } from '@/components/ui/api-list';
 
 import { columns, BillboardColumn } from './columns';
 
 interface BillboardClientProps {
 	data: BillboardColumn[];
-	host: string;
 }
 
-export const BillboardClient: React.FC<BillboardClientProps> = ({
-	data,
-	host,
-}) => {
+export const BillboardClient: React.FC<BillboardClientProps> = ({ data }) => {
 	const params = useParams();
 	const router = useRouter();
 

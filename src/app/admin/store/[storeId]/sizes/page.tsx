@@ -1,7 +1,7 @@
 import { db } from '@/lib/db';
 
 import { formatTimeToNow, isUUID } from '@/lib/utils';
-import { getOrigin } from '@/lib/utils/serverOnly';
+
 import { redirect } from 'next/navigation';
 import { SizesClient } from './components/client';
 import { SizeColumn } from './components/columns';
@@ -9,7 +9,6 @@ import { SizeColumn } from './components/columns';
 const SizesPage = async ({ params }: { params: { storeId: string } }) => {
 	if (!isUUID(params.storeId)) redirect('/admin');
 
-	const origin = getOrigin();
 	const sizes = await db.size.findMany({
 		where: {
 			storeId: params.storeId,
@@ -29,7 +28,7 @@ const SizesPage = async ({ params }: { params: { storeId: string } }) => {
 	return (
 		<div className='flex-col'>
 			<div className='flex-1 space-y-4 p-8 pt-6'>
-				<SizesClient host={origin} data={formattedSizes} />
+				<SizesClient data={formattedSizes} />
 			</div>
 		</div>
 	);

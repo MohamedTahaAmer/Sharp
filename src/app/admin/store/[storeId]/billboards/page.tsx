@@ -1,15 +1,11 @@
-
 import { db } from '@/lib/db';
 import { formatTimeToNow, isUUID } from '@/lib/utils';
-import { getOrigin } from '@/lib/utils/serverOnly';
 import { redirect } from 'next/navigation';
 import { BillboardClient } from './components/client';
 import { BillboardColumn } from './components/columns';
 
 const BillboardsPage = async ({ params }: { params: { storeId: string } }) => {
 	if (!isUUID(params.storeId)) redirect('/admin');
-
-	const origin = getOrigin();
 
 	const billboards = await db.billboard.findMany({
 		where: {
@@ -29,7 +25,7 @@ const BillboardsPage = async ({ params }: { params: { storeId: string } }) => {
 	return (
 		<div className='flex-col'>
 			<div className='flex-1 space-y-4 p-8 pt-6'>
-				<BillboardClient data={formattedBillboards} host={origin} />
+				<BillboardClient data={formattedBillboards} />
 			</div>
 		</div>
 	);

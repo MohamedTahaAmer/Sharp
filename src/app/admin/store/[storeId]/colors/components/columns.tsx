@@ -2,7 +2,9 @@
 
 import { ColumnDef } from '@tanstack/react-table';
 
+import { ArrowDown, ArrowUpDown, ArrowUp } from 'lucide-react';
 import { CellAction } from './cell-action';
+import { Button } from '@/components/ui/button';
 
 export type ColorColumn = {
 	id: string;
@@ -10,11 +12,37 @@ export type ColorColumn = {
 	value: string;
 	createdAt: string;
 };
-
+let buttonClicks = 0;
 export const columns: ColumnDef<ColorColumn>[] = [
 	{
 		accessorKey: 'name',
-		header: 'Name',
+
+		header: ({ column }) => {
+			const handleButtonClick = () => {
+				if (buttonClicks === 0) {
+					column.toggleSorting(true);
+					++buttonClicks;
+				} else if (buttonClicks === 1) {
+					column.toggleSorting(false);
+					++buttonClicks;
+				} else if (buttonClicks === 2) {
+					column.clearSorting();
+					buttonClicks = 0;
+				}
+			};
+			return (
+				<Button
+					className='pl-0 '
+					variant='transparent'
+					onClick={handleButtonClick}
+				>
+					Name
+					{buttonClicks === 0 && <ArrowUpDown className='ml-2 h-4 w-4' />}
+					{buttonClicks === 1 && <ArrowUp className='ml-2 h-4 w-4' />}
+					{buttonClicks === 2 && <ArrowDown className='ml-2 h-4 w-4' />}
+				</Button>
+			);
+		},
 	},
 	{
 		accessorKey: 'value',
