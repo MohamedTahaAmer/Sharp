@@ -7,6 +7,7 @@ import { db } from '@/lib/db';
 import { STORE_ID } from '@/config';
 import ThemeToggle from './ThemeToggle';
 import Image from 'next/image';
+import { Sharp } from './Svgs';
 
 const Navbar = async () => {
 	const categories = await db.category.findMany({
@@ -23,7 +24,7 @@ const Navbar = async () => {
 				<div className='relative flex h-16 items-center px-4 sm:px-6 lg:px-8'>
 					<Link href='/' className=' flex gap-x-2 md:ml-4 lg:ml-0'>
 						<p className='hidden text-3xl font-bold md:block'>{title}</p>
-						<div className='relative aspect-square w-10 overflow-hidden rounded-full md:hidden '>
+						{/* <div className='relative aspect-square w-10 overflow-hidden rounded-full md:hidden '>
 							<Image
 								src='/icon.svg'
 								alt='profile'
@@ -31,7 +32,8 @@ const Navbar = async () => {
 								sizes='100px'
 								className=' '
 							/>
-						</div>
+						</div> */}
+						<Sharp className='mx-auto aspect-square w-10  md:hidden' />
 					</Link>
 					<MainNav data={categories} />
 					<ThemeToggle />
