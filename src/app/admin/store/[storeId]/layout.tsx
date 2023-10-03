@@ -1,6 +1,5 @@
 import { redirect } from 'next/navigation';
 
-import StoreNav from '@/components/StoreNav';
 import { db } from '@/lib/db';
 import { isUUID } from '@/lib/utils';
 import { getUserId } from '@/lib/utils/serverOnly';
@@ -46,7 +45,6 @@ with these checks we are forcing the user to get to the his store no matter what
 	*/
 	return (
 		<>
-			<StoreNav />
 			{children}
 		</>
 	);

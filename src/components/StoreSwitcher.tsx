@@ -38,9 +38,11 @@ export default function StoreSwitcher({ className, items = [] }: Props) {
 		value: item.id,
 	}));
 
-	const currentStore = formattedItems.find(
+	let currentStore = formattedItems.find(
 		(item) => item.value === params.storeId,
 	);
+
+	if (!currentStore) currentStore = formattedItems[0];
 
 	const [open, setOpen] = React.useState(false);
 
