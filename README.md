@@ -6,15 +6,19 @@ Full Stack E-Commerce + Dashboard & CMS: Next.js 13 App Router, Stripe, Tailwind
 
 # Dark Mode
 
-![Rooms Home Dark Mode](https://res.cloudinary.com/dqe9ksk0p/image/upload/v1696293441/Rooms/aa_zyto3u.png)
+![Sharp Home Dark Mode](https://res.cloudinary.com/dqe9ksk0p/image/upload/v1696299864/Sharp/2_c8uv90.png)
 
 # Light Mode
 
-![Rooms Home Light Mode](https://res.cloudinary.com/dqe9ksk0p/image/upload/v1696011028/Rooms/2023-09-29_21_05_33-Rooms_sgucm8.jpg)
+![Sharp suits Light Mode](https://res.cloudinary.com/dqe9ksk0p/image/upload/v1696299867/Sharp/7_tg4frt.png)
 
 # Small Screens
 
-![Rooms Home Small Screens](https://res.cloudinary.com/dqe9ksk0p/image/upload/v1696011853/Rooms/t_zgqz0m.jpg)
+![Sharp Small Screens](https://res.cloudinary.com/dqe9ksk0p/image/upload/v1696299861/Sharp/10_czmxgv.jpg)
+
+# Dashboard
+
+![Sharp Admin Area](https://res.cloudinary.com/dqe9ksk0p/image/upload/v1696300021/Sharp/12_plfhpj.png)
 
 ## Features:
 
