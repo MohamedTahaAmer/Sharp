@@ -1,35 +1,53 @@
 # Welcome to <span style="color: #87CEEB;">SHARP!</span> Elevate your professional style with our premium suits, accessories, and more.
 
-Full Stack E-Commerce + Dashboard & CMS: Next.js 13 App Router, React, Tailwind, Prisma, Postgres,
+Full Stack E-Commerce + Dashboard & CMS: Next.js 13 App Router, Stripe, Tailwind, Prisma, Postgres,
 
 [Live Demo](https://sharp-mohamed-amer.vercel.app/)
 
-![Copy of Copy of Fullstack Twitter Clone (1)](https://github.com/AntonioErdeljac/next13-ecommerce-admin/assets/23248726/088760cb-837d-44b7-a959-63089385d0a0)
+# Dark Mode
 
-For DEMO, use [Stripe Testing Cards](https://stripe.com/docs/testing)
+![Rooms Home Dark Mode](https://res.cloudinary.com/dqe9ksk0p/image/upload/v1696293441/Rooms/aa_zyto3u.png)
 
-This is a repository for a Full Stack E-Commerce + Dashboard & CMS: Next.js 13 App Router, React, Tailwind, Prisma, MySQL
+# Light Mode
 
-[VIDEO TUTORIAL](https://youtu.be/5miHyP6lExg)
+![Rooms Home Light Mode](https://res.cloudinary.com/dqe9ksk0p/image/upload/v1696011028/Rooms/2023-09-29_21_05_33-Rooms_sgucm8.jpg)
 
-Key Features:
+# Small Screens
 
-- using Shadcn UI for the Admin!
-- Our admin dashboard is going to serve as both CMS, Admin and API!
-- control mulitple vendors / stores through this single CMS!
-- create, update and delete categories!
-- create, update and delete products!
-- upload multiple images for products, and change them whenever you want!
-- create, update and delete filters such as "Color" and "Size"
-- match them in the "Product" creation form.
-- create, update and delete "Billboards" which are these big texts on top of the page.
-- attach them to a single category, or use them standalone (Our Admin generates API for all of those cases!)
-- Search through all categories, products, sizes, colors, billboards with included pagination!
-- control which products are "featured" so they show on the homepage!
-- see your orders, sales, etc.
-- see graphs of your revenue etc.
-- You will learn Clerk Authentication!
-- Order creation
-- Stripe checkout
-- Stripe webhooks
-- MySQL + Prisma + PlanetScale
+![Rooms Home Small Screens](https://res.cloudinary.com/dqe9ksk0p/image/upload/v1696011853/Rooms/t_zgqz0m.jpg)
+
+## Features:
+
+- [x] Dark and Light mode switching.
+- [x] Authentication using Next-Auth & Google login.
+- [x] Filtering and searching functionality.
+- [x] Modern data fetching using React-Query.
+- [x] Postgres + Prisma + Supbase.
+- [x] Admin section that serves as a CMS.
+- [x] Payment with Stripe.
+- [x] Events and webhooks with Stripe.
+- [x] CRUD operations in the categories, products… .
+- [x] Image uploads using Cloudinary.
+- [x] Dashboard and data visualization using Recharts.
+- [x] Browser’s session storage for un-authed users.
+- [x] Shadcn UI for Radix UI and Tailwind CSS components.
+- [x] Fully accessible UI components using Headless UI.
+- [ ] Real-Time Chats between members.
+- [ ] Customers reviews section.
+
+## Acknowledgements
+
+- [Code With Antonio](https://www.youtube.com/@codewithantonio)
+- [Josh](https://www.youtube.com/@joshtriedcoding)
+- [maximilian schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/)
+- [Jack Harrington](https://www.youtube.com/@jherr)
+- [Jonas Schmedtmann](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/#instructor-1)
+- [Andrei Neagoie - ZTM](https://www.udemy.com/course/complete-nodejs-developer-zero-to-mastery/#instructor-1)
+- [John Smilga](https://www.udemy.com/course/nodejs-tutorial-and-projects-course/#instructor-1)
+- [Colt Steele](https://www.udemy.com/course/the-web-developer-bootcamp/#instructor-1)
+- [Free Code Camp](https://www.youtube.com/@freecodecamp)
+- [Elzero Web School](https://www.youtube.com/@ElzeroWebSchool)
+- [Web Dev Simplified](https://www.youtube.com/@WebDevSimplified)
+- [Dave Gray](https://www.youtube.com/@DaveGrayTeachesCode)
+- [Simon Wiss](https://www.youtube.com/@Simonswissdev)
+- [JavaScript Mastery](https://www.youtube.com/@javascriptmastery)
