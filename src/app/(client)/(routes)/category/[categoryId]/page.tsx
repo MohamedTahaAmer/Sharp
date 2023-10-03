@@ -32,7 +32,7 @@ const CategoryPage = async ({ params, searchParams }: CategoryPageProps) => {
 		include: {
 			category: {
 				include: {
-					billboard: true, // Include billboards inside categories
+					billboard: true,
 				},
 			},
 			color: true,

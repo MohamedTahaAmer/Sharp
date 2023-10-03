@@ -11,6 +11,6 @@ const ShowStoreModal = () => {
 	return <></>;
 };
 
-// - Strange, this component was names HomeModal, and we was importing it as ShowStoreModal
+// - Strange, this component was named HomeModal, and we was importing it as ShowStoreModal
 // > not strange, the default exports can be imported using any name
 export default ShowStoreModal;

@@ -54,7 +54,7 @@ export async function POST(req: Request) {
 			},
 		});
 
-		// - archive the all the purshased products
+		// - archive all the the purshased products
 		// const productIds = order.orderItems.map((orderItem) => orderItem.productId);
 		// await db.product.updateMany({
 		// 	where: {

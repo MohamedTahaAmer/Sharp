@@ -74,7 +74,7 @@ export function UserNameForm({ user, className, ...props }: UserNameFormProps) {
 			// - so that if he returned back to the settings, he finds his new (which is now his current) username populating the input as default
 			router.refresh();
 			router.back();
-			// - so that if we were rendering the username in the page that he navigates to, we refresh this page, to display his new username to hime
+			// - so that if we were rendering the username in the page that he navigates to, we refresh this page, to display his new username to him
 			router.refresh();
 		},
 	});

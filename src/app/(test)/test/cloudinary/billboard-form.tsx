@@ -52,7 +52,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
 	const [open, setOpen] = useState(false);
 	const [loading, setLoading] = useState(false);
 
-	// - this is anice hack to use the same component for creating and editing
+	// - using the same component for creating and editing
 	const title = initialData ? 'Edit billboard' : 'Create billboard';
 	const description = initialData ? 'Edit billboard.' : 'Add a new billboard';
 	const toastMessage = initialData
