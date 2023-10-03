@@ -42,7 +42,7 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
 			className='group cursor-pointer space-y-4 rounded-xl border bg-background p-3'
 		>
 			{/* Image & actions */}
-			<div className='relative aspect-square rounded-xl bg-background'>
+			<div className='relative aspect-square rounded-xl bg-slate-100'>
 				<Image
 					/*
 				// - this is a good way to display images
