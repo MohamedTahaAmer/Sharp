@@ -15,12 +15,12 @@ const Sharp = (props: LucideProps) => (
 		<text
 			x='50%'
 			y='61%'
-			font-family='Arial, sans-serif'
-			font-size='100'
+			fontFamily='Arial, sans-serif'
+			fontSize='100'
 			fill='dark'
-			text-anchor='middle'
-			dominant-baseline='middle'
-			font-weight='bold'
+			textAnchor='middle'
+			dominantBaseline='middle'
+			fontWeight='bold'
 			// className='fill-background'
 		>
 			S

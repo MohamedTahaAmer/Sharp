@@ -6,7 +6,11 @@ import { UserAccountNav } from './UserAccountNav';
 import ThemeToggle from './ThemeToggle';
 
 const StoreNav = async () => {
-	const { user } = (await getAuthSession())!;
+	const session = await getAuthSession();
+	if (!session) {
+		return null;
+	}
+	let user = session.user;
 
 	const stores = await db.store.findMany({
 		where: {

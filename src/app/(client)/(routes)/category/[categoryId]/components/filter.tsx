@@ -1,34 +1,34 @@
-'use client';
+"use client"
 
-import qs from 'query-string';
-import { useRouter, useSearchParams } from 'next/navigation';
+import qs from "query-string"
+import { useRouter, useSearchParams } from "next/navigation"
 
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import { Color, Size } from '@/types';
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { Color, Size } from "@/types"
 
 interface FilterProps {
-	data: (Size | Color)[];
-	name: string;
-	valueKey: string;
+	data: (Size | Color)[]
+	name: string
+	valueKey: string
 }
 
 const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
-	const searchParams = useSearchParams();
-	const router = useRouter();
+	const searchParams = useSearchParams()
+	const router = useRouter()
 
-	const selectedValue = searchParams.get(valueKey);
+	const selectedValue = searchParams.get(valueKey)
 
 	const onClick = (id: string) => {
-		const current = qs.parse(searchParams.toString());
+		const current = qs.parse(searchParams.toString())
 
 		const query = {
 			...current,
 			[valueKey]: id,
-		};
+		}
 
 		if (current[valueKey] === id) {
-			query[valueKey] = null;
+			query[valueKey] = null
 		}
 
 		const url = qs.stringifyUrl(
@@ -37,22 +37,22 @@ const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
 				query,
 			},
 			{ skipNull: true },
-		);
+		)
 
-		router.push(url);
-	};
+		router.push(url)
+	}
 
 	return (
-		<div className='mb-8'>
-			<h3 className='text-lg font-semibold'>{name}</h3>
-			<hr className='my-4' />
-			<div className='flex flex-wrap gap-2'>
+		<div className="mb-8">
+			<h3 className="text-lg font-semibold">{name}</h3>
+			<hr className="my-4" />
+			<div className="flex flex-wrap gap-2">
 				{data.map((filter) => (
-					<div key={filter.id} className='flex items-center'>
+					<div key={filter.id} className="flex items-center">
 						<Button
 							className={cn(
-								'min-w-[40px] rounded-md border border-background bg-background p-2 text-sm text-foreground hover:text-background',
-								selectedValue === filter.id && 'bg-foreground text-background',
+								"min-w-[40px] rounded-md border border-background bg-background p-2 text-sm text-foreground hover:text-background",
+								selectedValue === filter.id && "bg-foreground text-background",
 							)}
 							onClick={() => onClick(filter.id)}
 						>
@@ -62,7 +62,7 @@ const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
 				))}
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Filter;
+export default Filter
