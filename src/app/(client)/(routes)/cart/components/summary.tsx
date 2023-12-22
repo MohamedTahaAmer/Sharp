@@ -41,7 +41,6 @@ const Summary = () => {
 			}
 
 			const data = response.data;
-			console.log(data);
 			window.location = data.url;
 		} catch (error: any) {
 			console.error(error.message);

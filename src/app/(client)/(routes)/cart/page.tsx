@@ -1,36 +1,36 @@
-'use client';
+"use client"
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react"
 
-import Container from '@/components/ui/container';
-import useCart from '@/hooks/use-cart';
+import Container from "@/components/ui/container"
+import useCart from "@/hooks/use-cart"
 
-import Summary from './components/summary';
-import CartItem from './components/cart-item';
+import Summary from "./components/summary"
+import CartItem from "./components/cart-item"
 
-export const revalidate = 0;
+export const revalidate = 0
 
 const CartPage = () => {
-	const [isMounted, setIsMounted] = useState(false);
-	const cart = useCart();
+	const [isMounted, setIsMounted] = useState(false)
+	const cart = useCart()
 
 	useEffect(() => {
-		setIsMounted(true);
-	}, []);
+		setIsMounted(true)
+	}, [])
 
 	if (!isMounted) {
-		return null;
+		return null
 	}
 
 	return (
-		<div className=''>
+		<div className="">
 			<Container>
-				<div className='px-4 py-16 sm:px-6 lg:px-8'>
-					<h1 className='text-3xl font-bold text-foreground'>Shopping Cart</h1>
-					<div className='mt-12 gap-x-12 lg:grid lg:grid-cols-12 lg:items-start'>
-						<div className='lg:col-span-7'>
+				<div className="px-4 py-16 sm:px-6 lg:px-8">
+					<h1 className="text-3xl font-bold text-foreground">Shopping Cart</h1>
+					<div className="mt-12 gap-x-12 lg:grid lg:grid-cols-12 lg:items-start">
+						<div className="lg:col-span-7">
 							{cart.items.length === 0 && (
-								<p className='text-foreground'>No items added to cart.</p>
+								<p className="text-foreground">No items added to cart.</p>
 							)}
 							<ul>
 								{cart.items.map((item) => (
@@ -43,7 +43,7 @@ const CartPage = () => {
 				</div>
 			</Container>
 		</div>
-	);
-};
+	)
+}
 
-export default CartPage;
+export default CartPage

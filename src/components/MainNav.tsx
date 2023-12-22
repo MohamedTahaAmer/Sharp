@@ -9,7 +9,6 @@ import NavSwitcher from "./NavSwitcher"
 
 export function MainNav({ className, ...props }: HTMLAttributes<HTMLElement>) {
 	const pathname = usePathname()
-	console.log(pathname)
 	const params = useParams()
 
 	const routes = [
